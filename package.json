@@ -1,0 +1,12 @@
+{
+  "name": "script-scraper",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.44.1"
+  },
+  "scripts": {
+    "dev": "npx nodemon main.js"
+  }
+}

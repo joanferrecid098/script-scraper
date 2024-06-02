@@ -2,7 +2,7 @@ const writeDialogue = require('./write.js');
 const { chromium } = require('playwright');
 
 /* Changable variables */
-var mission = "Chop_(mission)";
+var mission = "Nervous_Ron";
 
 /* Line parsing */
 const parseLine = (text) => {
@@ -48,11 +48,13 @@ const parseLine = (text) => {
 
         for (let item of items) {
             if (!item.innerHTML.startsWith("<i>"))
+            if (!item.innerHTML.startsWith("Or:"))
             if (!item.innerHTML.startsWith("("))
 
             lines.push(item.innerHTML
                 .replace("<b>", "")
                 .replace("</b>", "")
+                .replace("<i>", "")
                 .replace("</i>", "")
                 .replace("\n", ""));
         }

@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');
 
 /* Changable variables */
-var mission = "Franklin_and_Lamar";
+var mission = "Complications";
 
 /* Line parsing */
 const parseLine = (text) => {

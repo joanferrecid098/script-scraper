@@ -4,6 +4,7 @@
   "main": "main.js",
   "license": "MIT",
   "dependencies": {
+    "fs": "^0.0.1-security",
     "playwright": "^1.44.1"
   },
   "scripts": {

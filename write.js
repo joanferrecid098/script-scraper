@@ -12,6 +12,7 @@ const writeDialogue = (dialogue) => {
             let json = JSON.stringify(missions);
 
             fs.writeFile('script.json', json, (err) => err && console.error(err));
+            console.error('File successfully created.');
           } else {
             console.error('Error reading file:', err);
           }
@@ -24,6 +25,7 @@ const writeDialogue = (dialogue) => {
         let json = JSON.stringify(missions);
 
         fs.writeFile('script.json', json, (err) => err && console.error(err));
+        console.error('File successfully written.');
     });
 }
 

@@ -1,7 +1,8 @@
+const writeDialogue = require('./write.js');
 const { chromium } = require('playwright');
 
 /* Changable variables */
-var mission = "Complications";
+var mission = "Chop_(mission)";
 
 /* Line parsing */
 const parseLine = (text) => {
@@ -46,11 +47,13 @@ const parseLine = (text) => {
         const items = document.querySelectorAll('.mw-parser-output p');
 
         for (let item of items) {
+            if (!item.innerHTML.startsWith("<i>"))
             if (!item.innerHTML.startsWith("("))
 
             lines.push(item.innerHTML
                 .replace("<b>", "")
                 .replace("</b>", "")
+                .replace("</i>", "")
                 .replace("\n", ""));
         }
 
@@ -62,8 +65,10 @@ const parseLine = (text) => {
         lines.push(parseLine(line));
     }
 
-    console.log(title);
-    console.log(lines);
+    writeDialogue({
+        title,
+        lines,
+    });
 
 })();
 
